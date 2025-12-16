@@ -1,0 +1,27 @@
+This document is a basic user guide for customers using the mobile banking application.
+
+1. Sign Up and Login
+When users launch the app for the first time, they must sign up or log in.
+During sign-up, users are required to complete mobile phone verification.
+After verification, users can create a user ID and password.
+If the password is entered incorrectly more than five times, the account will be temporarily locked.
+
+2. Account Overview
+After logging in, users can view all of their bank accounts on the home screen.
+By selecting an account, users can check transaction history for up to the last three months.
+Each transaction displays the date, amount, and transaction type.
+
+3. Money Transfer
+Users can transfer money to another bank account.
+To make a transfer, users must enter the recipient’s bank name and account number.
+The default daily transfer limit is 10,000,000 KRW.
+Users can change the transfer limit in the settings menu.
+
+4. Security and Authentication
+For security purposes, the app requires additional authentication for sensitive actions such as money transfers.
+Authentication methods may include a PIN, fingerprint, or face recognition.
+Users are advised not to share their login credentials with others.
+
+5. Customer Support
+If users experience issues while using the app, they can contact customer support through the app.
+Support is available via chat or phone during business hours.
