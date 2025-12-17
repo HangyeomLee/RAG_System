@@ -1,3 +1,12 @@
+#import for random embedding
+import random
+
+def fake_embedding(text: str, dim: int =384):
+    random.seed(hash(text)%1_000_000)
+    return [random.random() for _ in range(dim)]
+
+#embedding by ChatGPT
+
 # Save Chunk
 
 import os
@@ -19,19 +28,35 @@ CHUNK_PATH = "vectorstore/chunks.pkl"
 CHUNK_SIZE = 300
 
 def ingest():
+    
+    #Open document
     with open(DATA_PATH, "r", encoding="utf-8") as f:
         text = f.read()
-
-    chunks = [text[i:i+CHUNK_SIZE] for i in range(0, len(text), CHUNK_SIZE)]
+    print("Text length : ", len(text))
+    
+    #chunk
+    chunks = [
+        text[i:i+CHUNK_SIZE] 
+        for i in range(0, len(text), CHUNK_SIZE)
+        ]
+    print("Chunks count : ",len(chunks))
 
     embeddings = []
+    # for chunk in chunks:
+    #     emb = client.embeddings.create(
+    #         model="text-embedding-3-small",
+    #         input=chunk
+    #     ).data[0].embedding
+    #     embeddings.append(emb)
+    
+    #fake embedding version
     for chunk in chunks:
-        emb = client.embeddings.create(
-            model="text-embedding-3-small",
-            input=chunk
-        ).data[0].embedding
+        emb = fake_embedding(chunk)
         embeddings.append(emb)
-
+    if len(embeddings) == 0:
+        raise ValueError("Failed to generating embedding")
+    
+    
     dim = len(embeddings[0])
     index = faiss.IndexFlatL2(dim)
     index.add(np.array(embeddings).astype("float32"))
