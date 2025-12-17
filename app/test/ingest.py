@@ -17,13 +17,13 @@ from openai import OpenAI
 from dotenv import load_dotenv
 
 #Setting for using ChatGPT
-load_dotenv(dotenv_path = os.path.join(os.path.dirname(__file__),"..",".env"))
+load_dotenv(dotenv_path = os.path.join(os.path.dirname(__file__),"..","..",".env"))
 client = OpenAI()
 
 #Path variables
-DATA_PATH = "data/sample.txt"
-VECTOR_PATH = "vectorstore/faiss.index"
-CHUNK_PATH = "vectorstore/chunks.pkl"
+DATA_PATH = "../data/sample.txt"
+VECTOR_PATH = "../vectorstore/faiss.index"
+CHUNK_PATH = "../vectorstore/chunks.pkl"
 
 CHUNK_SIZE = 300
 

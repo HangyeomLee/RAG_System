@@ -10,9 +10,9 @@ def fake_embedding(text: str, dim: int = 384):
     return [random.random() for _ in range(dim)]
 
 
-DATA_PATH = "data/sample.txt"
-VECTOR_PATH = "vectorstore/faiss.index"
-CHUNK_PATH = "vectorstore/chunks.pkl"
+DATA_PATH = "../data/sample.txt"
+VECTOR_PATH = "../vectorstore/faiss.index"
+CHUNK_PATH = "../vectorstore/chunks.pkl"
 
 CHUNK_SIZE = 300
 
