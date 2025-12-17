@@ -16,8 +16,8 @@ import pickle
 from openai import OpenAI
 from dotenv import load_dotenv
 
+#Setting for using ChatGPT
 load_dotenv(dotenv_path = os.path.join(os.path.dirname(__file__),"..",".env"))
-
 client = OpenAI()
 
 #Path variables
